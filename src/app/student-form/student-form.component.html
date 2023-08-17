@@ -1,0 +1,161 @@
+<form [formGroup]="registerForm" class="border" (ngSubmit)="saveinfo()">
+<div >
+        <div class="row-head bg-light g-0">
+              <span class="head">Register</span>
+         </div>
+</div>
+
+<div class="row">
+    <div class="col mb-3">
+    <label for="firstName" class="form=label">First Name</label>
+    <input 
+    type="text"
+     class="form-control" 
+     id="firstName" 
+     placeholder="First Name"
+     formControlName="firstName">
+<div class="form-text"></div>
+</div>
+<div class="col mb-3">
+    <label for="lastName" class="form=label">Last Name</label>
+    <input 
+    type="text" 
+    class="form-control" 
+    id="lastName" 
+    placeholder="Last Name"
+    formControlName="lastName">
+    <div class="form-text"></div>
+</div>
+</div>
+<div class="row">
+    <div class="col mb-3">
+    <label for="email" class="form=label">Email</label>
+    <input type="email" 
+    class="form-control" 
+    id="email" 
+    placeholder="Email"
+    formControlName="email">
+    <div class="form-text"></div>
+    </div>
+    <div class="col mb-3">
+        <div class="m-1">Gender</div>
+        <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" value="m" id="male" formControlName="gender">
+        <label class="form-check-label" for="male">Male</label>
+    </div>
+
+    <div class="form-check form-check-inline">
+        <input type="radio" class="form-check-input" value="f" id="female" formControlName="gender">
+        <label class="form-check-label" for="female">Female</label>
+    </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col mb-3">
+      <label for="dob" class="form-label">Date Of Birth</label>
+      <input
+        type="text"
+        class="form-control"
+        id="dob"
+        placeholder="dd/mm/yy"
+        [(ngModel)]="dob"
+        name="dob"
+        required
+        pattern="\d{2}/\d{2}/\d{2}"
+        formControlName="dob">
+      <div class="form-text"></div>
+    </div>
+    
+    <div class="col mb-3">
+      <label for="class" class="form-label">Class</label>
+      <input
+        type="text"
+        class="form-control"
+        id="class"
+        placeholder="Class"
+        formControlName="class">
+      <div class="form-text"></div>
+    </div>
+  </div>
+
+<div class="row">
+    <div class="col mb-3">
+    <label for="address" class="form=label">Address</label>
+    <input 
+    type="text" 
+    class="form-control"
+    id="address" 
+    placeholder="Address"
+    formControlName="address">
+<div class="form-text"></div>
+</div>
+<div class="col mb-3">
+    <label for="mobilenum" class="form=label">Mobile Number</label>
+    <input type="text"
+     class="form-control" 
+     id="mobilenum"
+     placeholder="Mobile Number"
+     formControlName="mobilenumber">
+    <div class="form-text"></div>
+</div>
+</div>
+<div class="row">
+    <div class="col mb-3">
+    <label for="parentmail" class="form=label">Parent's Email</label>
+    <input type="email"
+     class="form-control"
+     id="parentmail"
+     placeholder="Email"
+     formControlName="parentsmail">
+<div class="form-text"></div>
+</div>
+<div class="col mb-3">
+    <label for="password" class="form=label">Password</label>
+    <input
+    type="password"
+    class="form-control"
+    id="password"
+    placeholder="Password"
+    formControlName="pwd">
+    <div class="form-text"></div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col mb-3">
+    <label for="description" class="form=label">Description</label>
+    <input
+    type="text"
+    class="form-control" 
+    id="description" 
+    placeholder="Description"
+    formControlName="descp">
+<div class="form-text"></div>
+</div>
+</div>
+
+<div class="row mb-3">
+<div class="col-6 offset-3">
+<div class="d-grid">
+<button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</div>
+</div>
+</form>
+  
+<div *ngIf="submittedData">
+    <h2>Submitted Information</h2>
+    <p>First Name: {{ submittedData.firstName }}</p>
+    <p>Last Name: {{ submittedData.lastName }}</p>
+    <p>Email: {{ submittedData.email }}</p>
+    <p>Gender: {{ submittedData.gender }}</p>
+    <p>Date of Birth: {{ submittedData.dob }}</p>
+    <p>Class: {{ submittedData.class }}</p>
+    <p>Address: {{ submittedData.address }}</p>
+    <p>Mobile Number: {{ submittedData.mobilenumber }}</p>
+    <p>Parent's Email: {{ submittedData.parentsmail }}</p>
+    <p>Password: {{ submittedData.pwd }}</p>
+    <p>Description: {{ submittedData.descp }}</p>
+  </div>
+
+
